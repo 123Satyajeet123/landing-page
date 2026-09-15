@@ -43,15 +43,21 @@ export function HizenPanel({
   mode,
   revealCount = workflowSteps.length,
   activeIndex = 0,
+  flush = false,
 }: {
   mode: PanelMode;
   revealCount?: number;
   activeIndex?: number;
+  flush?: boolean;
 }) {
   return (
     <div
       aria-hidden="true"
-      className="flex h-full flex-col overflow-hidden rounded-[10px] border border-hairline bg-ink text-paper shadow-[0_16px_40px_-20px_rgba(20,20,19,0.45)]"
+      className={`flex h-full flex-col overflow-hidden bg-ink text-paper ${
+        flush
+          ? ""
+          : "rounded-[10px] border border-hairline shadow-[0_16px_40px_-20px_rgba(20,20,19,0.45)]"
+      }`}
     >
       <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
         <span className="font-ui text-[12px] font-medium tracking-tight">

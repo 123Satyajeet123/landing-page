@@ -12,18 +12,15 @@ export function Problem() {
       <div className="shell py-20 sm:py-28">
         <div className="grid gap-8 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)] md:gap-16">
           <h2 className="heading text-ink">
-            You already know what should be automated.
+            AI tools are built for everyone, but optimized for no one.
           </h2>
           <div className="max-w-[62ch]">
             <p className="lead text-muted">
-              Most teams know which repetitive work they want to automate.
-              The hard part is building it, deploying it, and keeping it
-              running.
-            </p>
-            <p className="lead mt-4 text-muted">
-              And the automations that do get built often end up scattered
-              across different tools, without enough context of how the rest
-              of the work gets done.
+              Companies have more AI and automation tools than ever, but
+              those tools still don&apos;t understand how a specific company
+              works. So even when teams know what they want to automate,
+              they still have to map the process, deploy the automation, and
+              keep it running.
             </p>
           </div>
         </div>

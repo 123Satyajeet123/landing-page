@@ -15,9 +15,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Hizen — An intelligence layer for your repetitive work",
+  title: "Hizen — Show it how the work gets done",
   description:
-    "Show us how the work gets done. Hizen learns the process, understands the logic behind it, and turns it into agents that can run the work for you.",
+    "Hizen is an intelligence layer on top of your browser that learns the steps your team takes, the context they use, and the decisions they make — and then does the work in their browser.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
