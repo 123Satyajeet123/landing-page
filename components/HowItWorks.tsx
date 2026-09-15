@@ -20,7 +20,7 @@ export function HowItWorks() {
   return (
     <section className="bg-surface">
       <div className="shell py-20 sm:py-28">
-        <h2 className="heading max-w-2xl text-ink">
+        <h2 className="heading max-w-2xl text-heading">
           Teach Hizen the work. It handles the rest.
         </h2>
 
@@ -29,10 +29,10 @@ export function HowItWorks() {
             <div key={step.number} className="relative border-t border-hairline pt-5">
               <span className="absolute -top-px left-0 h-[2px] w-8 bg-ink" />
               <span className="eyebrow">{step.number}</span>
-              <h3 className="mt-3 text-[1.15rem] font-semibold leading-snug text-ink">
+              <h3 className="mt-3 text-[1.15rem] font-semibold leading-snug text-heading">
                 {step.title}
               </h3>
-              <p className="mt-2.5 text-[15px] leading-relaxed text-muted">
+              <p className="mt-2.5 text-[15px] leading-relaxed text-subtext">
                 {step.body}
               </p>
             </div>

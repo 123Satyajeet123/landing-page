@@ -5,7 +5,7 @@ export function ProductProof() {
   return (
     <section className="border-y border-hairline bg-recessed/70">
       <div className="shell py-20 sm:py-28">
-        <p className="lead mx-auto max-w-xl text-center text-ink">
+        <p className="lead mx-auto max-w-xl text-center text-heading">
           See what Hizen has learned, what&apos;s running, and where it needs
           you.
         </p>

@@ -11,7 +11,7 @@ export function Hero() {
       />
 
       <div className="shell relative flex items-center justify-between pt-8 sm:pt-10">
-        <span className="font-ui text-xl font-semibold tracking-tight text-ink sm:text-2xl">
+        <span className="font-ui text-xl font-semibold tracking-tight text-heading sm:text-2xl">
           {site.name}
         </span>
         <Button
@@ -24,12 +24,12 @@ export function Hero() {
 
       <div className="shell pt-14 pb-10 text-center sm:pt-20 sm:pb-14">
         <div className="mx-auto max-w-6xl">
-          <h1 className="display text-ink">
+          <h1 className="display text-heading">
             Show Hizen how the work gets done.
             <br />
             It handles it from there.
           </h1>
-          <p className="lead mx-auto mt-6 max-w-3xl text-muted">
+          <p className="lead mx-auto mt-6 max-w-3xl text-subtext">
             An intelligence layer on your browser that learns how your team
             works
             <br />
