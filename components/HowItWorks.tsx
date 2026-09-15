@@ -37,43 +37,27 @@ export function HowItWorks() {
           Teach Hizen the work. It handles the rest.
         </h2>
 
-        <div className="mt-16 flex flex-col gap-16 sm:mt-20 sm:gap-24">
-          {steps.map((step, i) => {
-            const reversed = i % 2 === 1;
-            return (
-              <div
-                key={step.number}
-                className="grid items-center gap-8 md:grid-cols-2 md:gap-16"
-              >
-                <div
-                  className={`relative border-t border-hairline pt-5 ${
-                    reversed ? "md:order-2" : "md:order-1"
-                  }`}
-                >
-                  <span className="absolute -top-px left-0 h-[2px] w-8 bg-heading" />
-                  <span className="eyebrow">{step.number}</span>
-                  <h3 className="mt-3 text-[1.4rem] font-semibold leading-snug text-heading sm:text-[1.55rem]">
-                    {step.title}
-                  </h3>
-                  <p className="lead mt-3 max-w-md text-subtext">
-                    {step.body}
-                  </p>
-                </div>
-
-                <div
-                  className={`mx-auto h-[240px] w-full max-w-sm ${
-                    reversed ? "md:order-1" : "md:order-2"
-                  }`}
-                >
-                  <HizenPanel
-                    mode={step.mode}
-                    revealCount={step.revealCount}
-                    activeIndex={step.activeIndex}
-                  />
-                </div>
+        <div className="mx-auto mt-16 flex max-w-2xl flex-col gap-16 sm:mt-20 sm:gap-24">
+          {steps.map((step) => (
+            <div key={step.number}>
+              <div className="relative border-t border-hairline pt-5">
+                <span className="absolute -top-px left-0 h-[2px] w-8 bg-heading" />
+                <span className="eyebrow">{step.number}</span>
+                <h3 className="mt-3 text-[1.4rem] font-semibold leading-snug text-heading sm:text-[1.55rem]">
+                  {step.title}
+                </h3>
+                <p className="lead mt-3 max-w-md text-subtext">{step.body}</p>
               </div>
-            );
-          })}
+
+              <div className="mt-8 h-[240px] w-full">
+                <HizenPanel
+                  mode={step.mode}
+                  revealCount={step.revealCount}
+                  activeIndex={step.activeIndex}
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
