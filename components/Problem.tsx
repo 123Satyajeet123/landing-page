@@ -7,7 +7,7 @@ export function Problem() {
           <br />
           but optimized for no one.
         </h2>
-        <p className="lead mx-auto mt-6 max-w-5xl text-subtext">
+        <p className="lead mx-auto mt-6 max-w-none text-subtext">
           Companies have a lot of AI automation and tools available, but the
           tools still don&apos;t understand how a specific company works.
           <br />

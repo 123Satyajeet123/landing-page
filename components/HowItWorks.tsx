@@ -38,16 +38,17 @@ function StepContent({ step }: { step: (typeof steps)[number] }) {
       <div className="relative mx-auto w-full border-t border-hairline pt-6">
         <span className="absolute -top-px left-1/2 h-[2px] w-8 -translate-x-1/2 bg-heading" />
         <span className="eyebrow">{step.number}</span>
-        <h3 className="mt-3 text-[1.7rem] font-semibold leading-snug text-heading sm:text-[1.9rem]">
+        <h3 className="mt-3 text-[2rem] font-semibold leading-snug text-heading sm:text-[2.25rem]">
           {step.title}
         </h3>
-        <p className="lead mx-auto mt-3 max-w-lg text-[1.05rem] text-subtext">
+        <p className="lead mx-auto mt-3 max-w-xl text-[1.2rem] text-subtext">
           {step.body}
         </p>
       </div>
 
-      <div className="mx-auto mt-9 h-[300px] w-full max-w-xl sm:h-[360px]">
+      <div className="mx-auto mt-9 h-[340px] w-full max-w-2xl sm:h-[400px]">
         <HizenPanel
+          large
           mode={step.mode}
           revealCount={step.revealCount}
           activeIndex={step.activeIndex}
