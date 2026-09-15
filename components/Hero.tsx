@@ -23,10 +23,18 @@ export function Hero() {
       </div>
 
       <div className="shell pt-14 pb-10 text-center sm:pt-20 sm:pb-14">
-        <div className="mx-auto max-w-3xl">
-          <h1 className="display text-ink">{site.headline}</h1>
-          <p className="lead mx-auto mt-6 max-w-2xl text-muted">
-            {site.subtext}
+        <div className="mx-auto max-w-6xl">
+          <h1 className="display text-ink">
+            Show Hizen how the work gets done.
+            <br />
+            It handles it from there.
+          </h1>
+          <p className="lead mx-auto mt-6 max-w-3xl text-muted">
+            An intelligence layer on your browser that learns how your team
+            works
+            <br />
+            and then does the work for them, without anyone having to build
+            or deploy an agent.
           </p>
         </div>
       </div>

@@ -17,7 +17,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Hizen — Show it how the work gets done",
   description:
-    "Hizen is an intelligence layer on top of your browser that learns the steps your team takes, the context they use, and the decisions they make — and then does the work in their browser.",
+    "An intelligence layer on your browser that learns how your team works and then does the work for them, without anyone having to build or deploy an agent.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
