@@ -32,23 +32,21 @@ const steps: {
   },
 ];
 
-function StepContent({
-  step,
-}: {
-  step: (typeof steps)[number];
-}) {
+function StepContent({ step }: { step: (typeof steps)[number] }) {
   return (
     <>
-      <div className="relative mx-auto w-full border-t border-hairline pt-5">
+      <div className="relative mx-auto w-full border-t border-hairline pt-6">
         <span className="absolute -top-px left-1/2 h-[2px] w-8 -translate-x-1/2 bg-heading" />
         <span className="eyebrow">{step.number}</span>
-        <h3 className="mt-3 text-[1.4rem] font-semibold leading-snug text-heading sm:text-[1.55rem]">
+        <h3 className="mt-3 text-[1.7rem] font-semibold leading-snug text-heading sm:text-[1.9rem]">
           {step.title}
         </h3>
-        <p className="lead mx-auto mt-3 max-w-md text-subtext">{step.body}</p>
+        <p className="lead mx-auto mt-3 max-w-lg text-[1.05rem] text-subtext">
+          {step.body}
+        </p>
       </div>
 
-      <div className="mx-auto mt-8 h-[240px] w-full">
+      <div className="mx-auto mt-9 h-[300px] w-full max-w-xl sm:h-[360px]">
         <HizenPanel
           mode={step.mode}
           revealCount={step.revealCount}
@@ -96,11 +94,16 @@ function ScrollDrivenSteps() {
   return (
     <div
       ref={trackRef}
-      className="relative mt-16"
-      style={{ height: `${steps.length * 100}vh` }}
+      className="relative"
+      style={{ height: `${steps.length * 80}vh` }}
     >
-      <div className="sticky top-1/2 mx-auto max-w-2xl -translate-y-1/2 text-center">
-        <StepContent step={steps[activeIndex]} />
+      <div className="sticky top-16 mx-auto max-w-3xl text-center sm:top-20">
+        <h2 className="heading text-heading">
+          Teach Hizen the work. It handles the rest.
+        </h2>
+        <div className="mt-8">
+          <StepContent step={steps[activeIndex]} />
+        </div>
       </div>
     </div>
   );
@@ -109,19 +112,20 @@ function ScrollDrivenSteps() {
 export function HowItWorks() {
   return (
     <section className="bg-surface">
-      <div className="shell py-20 sm:py-28">
-        <h2 className="heading mx-auto max-w-3xl text-center text-heading">
-          Teach Hizen the work. It handles the rest.
-        </h2>
+      <div className="shell py-20 sm:py-24">
+        <div className="md:hidden">
+          <h2 className="heading mx-auto max-w-3xl text-center text-heading">
+            Teach Hizen the work. It handles the rest.
+          </h2>
+          <div className="mx-auto mt-16 flex max-w-3xl flex-col gap-16">
+            {steps.map((step) => (
+              <StepContent key={step.number} step={step} />
+            ))}
+          </div>
+        </div>
 
         <div className="hidden md:block">
           <ScrollDrivenSteps />
-        </div>
-
-        <div className="mx-auto mt-16 flex max-w-2xl flex-col gap-16 md:hidden">
-          {steps.map((step) => (
-            <StepContent key={step.number} step={step} />
-          ))}
         </div>
       </div>
     </section>
