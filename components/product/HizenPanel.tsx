@@ -56,7 +56,7 @@ export function HizenPanel({
       className={`flex h-full flex-col overflow-hidden bg-ink text-paper ${
         flush
           ? ""
-          : "rounded-[10px] border border-hairline shadow-[0_16px_40px_-20px_rgba(20,20,19,0.45)]"
+          : "rounded-2xl border border-black/40 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_16px_32px_-16px_rgba(20,20,19,0.4),0_32px_64px_-28px_rgba(20,20,19,0.45)]"
       }`}
     >
       <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
