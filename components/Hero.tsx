@@ -11,7 +11,7 @@ export function Hero() {
       />
 
       <div className="shell relative flex items-center justify-between pt-8 sm:pt-10">
-        <span className="font-ui text-xl font-semibold tracking-tight text-heading sm:text-2xl">
+        <span className="font-ui text-xl font-semibold tracking-tight text-subtext sm:text-2xl">
           {site.name}
         </span>
         <Button

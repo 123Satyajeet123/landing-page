@@ -12,15 +12,17 @@ export function Problem() {
       <div className="shell py-20 sm:py-28">
         <div className="grid gap-8 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)] md:gap-16">
           <h2 className="heading text-heading">
-            AI tools are built for everyone, but optimized for no one.
+            AI is built for everyone,
+            <br />
+            but optimized for no one.
           </h2>
           <div className="max-w-[62ch]">
             <p className="lead text-subtext">
-              Companies have more AI and automation tools than ever, but
-              those tools still don&apos;t understand how a specific company
-              works. So even when teams know what they want to automate,
-              they still have to map the process, deploy the automation, and
-              keep it running.
+              Companies have a lot of AI automation and tools available, but
+              the tools still don&apos;t understand how a specific company
+              works. Even the teams know what they want to automate, they
+              still have to map the process, deploy the automation, and keep
+              it running.
             </p>
           </div>
         </div>
