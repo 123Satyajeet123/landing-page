@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { HizenPanel, type PanelMode } from "./product/HizenPanel";
 
 const steps: {
@@ -29,6 +32,80 @@ const steps: {
   },
 ];
 
+function StepContent({
+  step,
+}: {
+  step: (typeof steps)[number];
+}) {
+  return (
+    <>
+      <div className="relative mx-auto w-full border-t border-hairline pt-5">
+        <span className="absolute -top-px left-1/2 h-[2px] w-8 -translate-x-1/2 bg-heading" />
+        <span className="eyebrow">{step.number}</span>
+        <h3 className="mt-3 text-[1.4rem] font-semibold leading-snug text-heading sm:text-[1.55rem]">
+          {step.title}
+        </h3>
+        <p className="lead mx-auto mt-3 max-w-md text-subtext">{step.body}</p>
+      </div>
+
+      <div className="mx-auto mt-8 h-[240px] w-full">
+        <HizenPanel
+          mode={step.mode}
+          revealCount={step.revealCount}
+          activeIndex={step.activeIndex}
+        />
+      </div>
+    </>
+  );
+}
+
+function ScrollDrivenSteps() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    let raf = 0;
+    const update = () => {
+      const el = trackRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const total = rect.height - window.innerHeight;
+      if (total <= 0) return;
+      const scrolled = Math.min(Math.max(-rect.top, 0), total);
+      const progress = scrolled / total;
+      const index = Math.min(
+        steps.length - 1,
+        Math.floor(progress * steps.length)
+      );
+      setActiveIndex(index);
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={trackRef}
+      className="relative mt-16"
+      style={{ height: `${steps.length * 100}vh` }}
+    >
+      <div className="sticky top-1/2 mx-auto max-w-2xl -translate-y-1/2 text-center">
+        <StepContent step={steps[activeIndex]} />
+      </div>
+    </div>
+  );
+}
+
 export function HowItWorks() {
   return (
     <section className="bg-surface">
@@ -37,26 +114,13 @@ export function HowItWorks() {
           Teach Hizen the work. It handles the rest.
         </h2>
 
-        <div className="mx-auto mt-16 flex max-w-2xl flex-col gap-16 sm:mt-20 sm:gap-24">
-          {steps.map((step) => (
-            <div key={step.number}>
-              <div className="relative border-t border-hairline pt-5">
-                <span className="absolute -top-px left-0 h-[2px] w-8 bg-heading" />
-                <span className="eyebrow">{step.number}</span>
-                <h3 className="mt-3 text-[1.4rem] font-semibold leading-snug text-heading sm:text-[1.55rem]">
-                  {step.title}
-                </h3>
-                <p className="lead mt-3 max-w-md text-subtext">{step.body}</p>
-              </div>
+        <div className="hidden md:block">
+          <ScrollDrivenSteps />
+        </div>
 
-              <div className="mt-8 h-[240px] w-full">
-                <HizenPanel
-                  mode={step.mode}
-                  revealCount={step.revealCount}
-                  activeIndex={step.activeIndex}
-                />
-              </div>
-            </div>
+        <div className="mx-auto mt-16 flex max-w-2xl flex-col gap-16 md:hidden">
+          {steps.map((step) => (
+            <StepContent key={step.number} step={step} />
           ))}
         </div>
       </div>
