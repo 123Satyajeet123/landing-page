@@ -13,8 +13,8 @@ export function Button({
 
   const variants: Record<Variant, string> = {
     primary:
-      "bg-ink text-paper shadow-[0_1px_1px_rgba(20,20,19,0.1),0_8px_20px_-8px_rgba(20,20,19,0.45)] hover:-translate-y-px hover:bg-[#232320] hover:shadow-[0_1px_1px_rgba(20,20,19,0.12),0_14px_28px_-10px_rgba(20,20,19,0.5)] active:translate-y-0 active:bg-ink active:shadow-[0_1px_1px_rgba(20,20,19,0.1),0_4px_10px_-6px_rgba(20,20,19,0.4)]",
-    ghost: "text-ink hover:text-muted",
+      "bg-heading text-mockup-ink shadow-[0_1px_1px_rgba(0,0,0,0.2),0_8px_20px_-8px_rgba(0,0,0,0.55)] hover:-translate-y-px hover:bg-[#e5e5e5] hover:shadow-[0_1px_1px_rgba(0,0,0,0.22),0_14px_28px_-10px_rgba(0,0,0,0.6)] active:translate-y-0 active:bg-[#d4d4d4] active:shadow-[0_1px_1px_rgba(0,0,0,0.2),0_4px_10px_-6px_rgba(0,0,0,0.5)]",
+    ghost: "text-subtext hover:text-heading",
   };
 
   return (

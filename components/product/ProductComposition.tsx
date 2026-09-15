@@ -41,19 +41,19 @@ export function ProductComposition() {
     <div
       role="img"
       aria-label="A browser window with the Hizen extension docked on the right, watching a customer account get updated, understanding the steps, then carrying out the update itself and pausing to ask which plan to apply before finishing."
-      className="overflow-hidden rounded-2xl border border-hairline bg-surface shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7),0_1px_2px_rgba(20,20,19,0.04),0_16px_32px_-16px_rgba(20,20,19,0.25),0_40px_80px_-32px_rgba(20,20,19,0.28)]"
+      className="overflow-hidden rounded-2xl border border-mockup-border bg-mockup-surface shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7),0_1px_2px_rgba(20,20,19,0.04),0_16px_32px_-16px_rgba(20,20,19,0.25),0_40px_80px_-32px_rgba(20,20,19,0.28)]"
     >
       <div
         aria-hidden="true"
-        className="flex items-center gap-3 border-b border-hairline bg-gradient-to-b from-recessed to-recessed/50 px-4 py-2.5"
+        className="flex items-center gap-3 border-b border-mockup-border bg-gradient-to-b from-mockup-chrome to-mockup-chrome/50 px-4 py-2.5"
       >
         <div className="flex items-center gap-1.5">
-          <span className="h-2.5 w-2.5 rounded-full bg-hairline-strong" />
-          <span className="h-2.5 w-2.5 rounded-full bg-hairline-strong" />
-          <span className="h-2.5 w-2.5 rounded-full bg-hairline-strong" />
+          <span className="h-2.5 w-2.5 rounded-full bg-mockup-border-strong" />
+          <span className="h-2.5 w-2.5 rounded-full bg-mockup-border-strong" />
+          <span className="h-2.5 w-2.5 rounded-full bg-mockup-border-strong" />
         </div>
         <div className="flex items-end gap-1">
-          <span className="rounded-t-md border border-b-0 border-hairline bg-surface px-3.5 py-1.5 font-ui text-[12px] font-medium text-ink">
+          <span className="rounded-t-md border border-b-0 border-mockup-border bg-mockup-surface px-3.5 py-1.5 font-ui text-[12px] font-medium text-mockup-ink">
             Accounts
           </span>
         </div>
@@ -61,17 +61,17 @@ export function ProductComposition() {
 
       <div
         aria-hidden="true"
-        className="flex items-center gap-3 border-b border-hairline px-4 py-2.5"
+        className="flex items-center gap-3 border-b border-mockup-border px-4 py-2.5"
       >
-        <div className="flex items-center gap-2.5 text-faint">
+        <div className="flex items-center gap-2.5 text-mockup-faint">
           <ChevronIcon direction="left" />
           <ChevronIcon direction="right" />
           <RefreshIcon />
         </div>
-        <div className="min-w-0 flex-1 truncate rounded-full bg-recessed px-3.5 py-1.5 font-ui text-[11px] text-faint">
+        <div className="min-w-0 flex-1 truncate rounded-full bg-mockup-chrome px-3.5 py-1.5 font-ui text-[11px] text-mockup-faint">
           app.ledgerbase.io/accounts/northwind-co
         </div>
-        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-[6px] bg-ink font-ui text-[10px] font-semibold text-paper shadow-[0_1px_2px_rgba(20,20,19,0.25)]">
+        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-[6px] bg-mockup-ink font-ui text-[10px] font-semibold text-mockup-surface shadow-[0_1px_2px_rgba(20,20,19,0.25)]">
           H
         </div>
       </div>
@@ -82,7 +82,7 @@ export function ProductComposition() {
             highlight={frame.mode === "watching" ? frame.highlight : -1}
           />
         </div>
-        <div className="h-[260px] shrink-0 border-t border-hairline sm:h-[380px] sm:w-[240px] sm:border-l sm:border-t-0 md:h-[420px] md:w-[272px]">
+        <div className="h-[260px] shrink-0 border-t border-mockup-border sm:h-[380px] sm:w-[240px] sm:border-l sm:border-t-0 md:h-[420px] md:w-[272px]">
           <HizenPanel
             flush
             mode={frame.mode}

@@ -7,11 +7,11 @@ export function Hero() {
     <section id="top" className="relative isolate overflow-hidden">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(ellipse_820px_420px_at_50%_-8%,rgba(20,20,19,0.05),transparent_65%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(ellipse_820px_420px_at_50%_-8%,rgba(255,255,255,0.06),transparent_65%)]"
       />
 
       <div className="shell relative flex items-center justify-between pt-8 sm:pt-10">
-        <span className="font-ui text-xl font-semibold tracking-tight text-subtext sm:text-2xl">
+        <span className="font-ui text-xl font-semibold tracking-tight text-heading sm:text-2xl">
           {site.name}
         </span>
         <Button

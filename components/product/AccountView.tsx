@@ -8,12 +8,12 @@ const rows = [
 
 export function AccountView({ highlight = -1 }: { highlight?: number }) {
   return (
-    <div aria-hidden="true" className="flex h-full flex-col bg-surface font-ui">
-      <div className="border-b border-hairline px-4 py-3">
-        <div className="text-[13px] font-medium text-ink">Northwind Co.</div>
-        <div className="mt-0.5 text-[11px] text-faint">Customer account</div>
+    <div aria-hidden="true" className="flex h-full flex-col bg-mockup-surface font-ui">
+      <div className="border-b border-mockup-border px-4 py-3">
+        <div className="text-[13px] font-medium text-mockup-ink">Northwind Co.</div>
+        <div className="mt-0.5 text-[11px] text-mockup-faint">Customer account</div>
       </div>
-      <div className="flex-1 divide-y divide-hairline/70">
+      <div className="flex-1 divide-y divide-mockup-border/70">
         {rows.map((row, i) => (
           <div
             key={row.label}
@@ -21,10 +21,10 @@ export function AccountView({ highlight = -1 }: { highlight?: number }) {
               i === highlight ? "bg-accent-soft" : ""
             }`}
           >
-            <span className="text-faint">{row.label}</span>
+            <span className="text-mockup-faint">{row.label}</span>
             <span
               className={`font-medium ${
-                i === highlight ? "text-accent" : "text-ink"
+                i === highlight ? "text-accent" : "text-mockup-ink"
               }`}
             >
               {row.value}

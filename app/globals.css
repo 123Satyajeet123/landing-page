@@ -1,20 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #f6eeda;
-  --color-surface: #fdfaf1;
-  --color-recessed: #eee1c4;
+  /* Page shell — dark mode */
+  --color-paper: #0a0a0a;
+  --color-surface: #141414;
+  --color-recessed: #000000;
   --color-ink: #141413;
-  --color-heading: #5b3a22;
-  --color-subtext: #000000;
+  --color-heading: #ffffff;
+  --color-subtext: #a3a3a3;
   --color-muted: #6b6862;
   --color-faint: #8f8b83;
-  --color-hairline: #e6d8b6;
-  --color-hairline-strong: #d6c397;
+  --color-hairline: #262626;
+  --color-hairline-strong: #333333;
   --color-accent: #2f5d4f;
   --color-accent-soft: #e8efea;
   --color-ochre: #8f6a2a;
   --color-ochre-soft: #f4ede0;
+
+  /* Product mockup — always a light "software UI", independent of the page theme */
+  --color-mockup-surface: #fdfaf1;
+  --color-mockup-chrome: #eee1c4;
+  --color-mockup-border: #e6d8b6;
+  --color-mockup-border-strong: #d6c397;
+  --color-mockup-ink: #141413;
+  --color-mockup-faint: #8f8b83;
+  --color-panel-fg: #f6eeda;
 
   --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
   --font-ui: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -29,7 +39,7 @@
     position: relative;
     z-index: 0;
     background-color: var(--color-paper);
-    color: var(--color-ink);
+    color: var(--color-subtext);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -41,7 +51,7 @@
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    opacity: 0.07;
+    opacity: 0.09;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-size: 180px 180px;
   }
@@ -52,7 +62,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-ink);
+    outline: 2px solid var(--color-subtext);
     outline-offset: 3px;
     border-radius: 2px;
   }

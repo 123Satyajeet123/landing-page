@@ -27,7 +27,7 @@ export function HowItWorks() {
         <div className="mt-14 grid gap-12 sm:mt-16 sm:grid-cols-3 sm:gap-8">
           {steps.map((step) => (
             <div key={step.number} className="relative border-t border-hairline pt-5">
-              <span className="absolute -top-px left-0 h-[2px] w-8 bg-ink" />
+              <span className="absolute -top-px left-0 h-[2px] w-8 bg-heading" />
               <span className="eyebrow">{step.number}</span>
               <h3 className="mt-3 text-[1.15rem] font-semibold leading-snug text-heading">
                 {step.title}

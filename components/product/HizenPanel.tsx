@@ -53,7 +53,7 @@ export function HizenPanel({
   return (
     <div
       aria-hidden="true"
-      className={`flex h-full flex-col overflow-hidden bg-ink text-paper ${
+      className={`flex h-full flex-col overflow-hidden bg-mockup-ink text-panel-fg ${
         flush
           ? ""
           : "rounded-2xl border border-black/40 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_16px_32px_-16px_rgba(20,20,19,0.4),0_32px_64px_-28px_rgba(20,20,19,0.45)]"
@@ -63,7 +63,7 @@ export function HizenPanel({
         <span className="font-ui text-[12px] font-medium tracking-tight">
           Hizen
         </span>
-        <span className="flex items-center gap-1.5 font-ui text-[11px] text-paper/70">
+        <span className="flex items-center gap-1.5 font-ui text-[11px] text-panel-fg/70">
           <StatusDot mode={mode} />
           {modeLabel[mode]}
         </span>
@@ -83,8 +83,8 @@ export function HizenPanel({
                       : "translate-y-1 opacity-0"
                   }`}
                 >
-                  <span className="h-1 w-1 shrink-0 rounded-full bg-paper/40" />
-                  <span className="text-paper/80">{step.label}</span>
+                  <span className="h-1 w-1 shrink-0 rounded-full bg-panel-fg/40" />
+                  <span className="text-panel-fg/80">{step.label}</span>
                 </li>
               );
             })}
@@ -95,8 +95,8 @@ export function HizenPanel({
           <ol className="space-y-2">
             {workflowSteps.map((step, i) => (
               <li key={step.id} className="flex gap-2.5 text-[12px]">
-                <span className="w-3.5 shrink-0 text-paper/40">{i + 1}</span>
-                <span className="text-paper/90">{step.label}</span>
+                <span className="w-3.5 shrink-0 text-panel-fg/40">{i + 1}</span>
+                <span className="text-panel-fg/90">{step.label}</span>
               </li>
             ))}
           </ol>
@@ -114,10 +114,10 @@ export function HizenPanel({
                   <span
                     className={`flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full border ${
                       status === "done"
-                        ? "border-accent bg-accent text-ink"
+                        ? "border-accent bg-accent text-mockup-ink"
                         : status === "working"
                           ? "border-accent"
-                          : "border-paper/25"
+                          : "border-panel-fg/25"
                     }`}
                   >
                     {status === "done" && <CheckIcon />}
@@ -127,7 +127,9 @@ export function HizenPanel({
                   </span>
                   <span
                     className={
-                      status === "pending" ? "text-paper/40" : "text-paper/90"
+                      status === "pending"
+                        ? "text-panel-fg/40"
+                        : "text-panel-fg/90"
                     }
                   >
                     {step.label}
@@ -140,8 +142,8 @@ export function HizenPanel({
 
         {mode === "needsInput" && (
           <div>
-            <p className="text-[12px] text-paper/60">I need your input</p>
-            <p className="mt-1.5 text-[13px] leading-snug text-paper/95">
+            <p className="text-[12px] text-panel-fg/60">I need your input</p>
+            <p className="mt-1.5 text-[13px] leading-snug text-panel-fg/95">
               {decisionStep.question}
             </p>
             <div className="mt-3 space-y-1.5">
@@ -152,8 +154,8 @@ export function HizenPanel({
                     key={option}
                     className={`rounded-md border px-2.5 py-1.5 text-[12px] transition-colors duration-500 ${
                       chosen
-                        ? "border-ochre/50 bg-ochre/20 text-paper"
-                        : "border-white/10 text-paper/60"
+                        ? "border-ochre/50 bg-ochre/20 text-panel-fg"
+                        : "border-white/10 text-panel-fg/60"
                     }`}
                   >
                     {option}
@@ -170,18 +172,18 @@ export function HizenPanel({
               {workflowSteps.map((step) => (
                 <li
                   key={step.id}
-                  className="flex items-center gap-2.5 text-[12px] text-paper/50"
+                  className="flex items-center gap-2.5 text-[12px] text-panel-fg/50"
                 >
-                  <span className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full border border-accent bg-accent text-ink">
+                  <span className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full border border-accent bg-accent text-mockup-ink">
                     <CheckIcon />
                   </span>
-                  <span className="line-through decoration-paper/20">
+                  <span className="line-through decoration-panel-fg/20">
                     {step.label}
                   </span>
                 </li>
               ))}
             </ul>
-            <p className="mt-3 text-[12px] font-medium text-paper/90">
+            <p className="mt-3 text-[12px] font-medium text-panel-fg/90">
               Account updated and confirmation sent.
             </p>
           </div>
